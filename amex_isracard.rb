@@ -24,7 +24,7 @@ expense_rows = (domestic + abroad).map do |line|
     inflow = line.last[1..-1]
     outflow = ''
   else
-    outflow = line.last[1..-1]
+    outflow = line.last
     inflow = ''
   end
 
