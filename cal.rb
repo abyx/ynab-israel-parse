@@ -11,7 +11,8 @@ end.take_while do |row|
   row.first != 'סה"כ:'
 end[1..-1] || []).map do |row|
   if row[0].kind_of? Date
-    date = row[0].strftime('%d/%m/%Y')
+    # Excel marks these as dates wrongly (mixes day and month)
+    date = row[0].strftime('%m/%d/%Y')
   else
     date = row[0]
   end
